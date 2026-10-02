@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#fff6ee">
+<title>For You ♡</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="fx" aria-hidden="true"></canvas>
+<audio id="bgm" src="music/song.mp3" loop preload="none"></audio>
+<button id="musicBtn" class="music" aria-label="Pause music" title="Music">♪</button>
+
+<main>
+  <!-- SCREEN 1: THE GIFT -->
+  <section class="screen active" id="s1">
+    <div class="wrap">
+      <h1 class="script big">I made something for you...</h1>
+      <div class="gift" id="gift" aria-hidden="true">
+        <div class="lid"><i class="bow"></i></div>
+        <div class="base"></div>
+      </div>
+      <button class="btn" id="openBtn">Open Your Gift ♡</button>
+    </div>
+  </section>
+
+  <!-- SCREEN 2: BIRTHDAY REVEAL -->
+  <section class="screen" id="s2" aria-hidden="true">
+    <div class="wrap">
+      <h1 class="rv" style="--i:0">Happy Birthday,<br><span class="script name" data-name></span> ♡</h1>
+      <figure class="hero rv" style="--i:1"><img id="heroImg" alt="A photo of us"></figure>
+      <p class="rv" id="bdayMsg" style="--i:2"></p>
+      <div class="rv" style="--i:3"><button class="btn" data-go="2">There's more →</button></div>
+    </div>
+  </section>
+
+  <!-- SCREEN 3: MEMORIES -->
+  <section class="screen" id="s3" aria-hidden="true">
+    <div class="wrap wide">
+      <h2 class="script big rv" style="--i:0">Our memories</h2>
+      <div class="board" id="board"></div>
+      <p class="hint rv" style="--i:2">Tap a photo to open it</p>
+      <div class="rv" style="--i:3"><button class="btn" data-go="3">Continue →</button></div>
+    </div>
+  </section>
+
+  <!-- SCREEN 4: LETTER -->
+  <section class="screen" id="s4" aria-hidden="true">
+    <div class="wrap">
+      <article class="letter" id="letter" title="Tap to show the whole letter"><div id="letterText"></div></article>
+      <div class="next" id="letterNext"><button class="btn" data-go="4">Continue →</button></div>
+    </div>
+  </section>
+
+  <!-- SCREEN 5: FINAL SURPRISE -->
+  <section class="screen" id="s5" aria-hidden="true">
+    <div class="stage">
+      <h2 class="script big last" id="oneLast"></h2>
+      <div class="finale" id="finale">
+        <h1 class="script big" id="finalMsg"></h1>
+        <p id="signature"></p>
+        <button class="btn" id="replayBtn">Replay ♡</button>
+      </div>
+    </div>
+    <div class="garden" id="garden" aria-hidden="true"></div>
+  </section>
+</main>
+
+<div class="lb" id="lb" hidden>
+  <figure class="polaroid big-p" id="lbCard">
+    <img id="lbImg" alt="">
+    <figcaption class="script" id="lbCap"></figcaption>
+  </figure>
+  <button class="close" id="lbClose" aria-label="Close photo">✕</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
